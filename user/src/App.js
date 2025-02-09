@@ -10,8 +10,8 @@ function App() {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [status, setStatus] = useState("ongoing");
   const [loading, setLoading] = useState(false);
-  const [winningCells, setWinningCells] = useState([]); // To store the winning cell coordinates
-  const [isTwoPlayerMode, setIsTwoPlayerMode] = useState(false); // Toggle for two-player mode
+  const [winningCells, setWinningCells] = useState([]); 
+  const [isTwoPlayerMode, setIsTwoPlayerMode] = useState(false); 
 
   // Reset the game state
   const resetGame = () => {
@@ -22,7 +22,7 @@ function App() {
     ]);
     setCurrentPlayer("X");
     setStatus("ongoing");
-    setWinningCells([]); // Clear the winning cells
+    setWinningCells([]); 
   };
 
   // Check game status after every board update
@@ -59,7 +59,7 @@ function App() {
         board[x1][y1] === board[x3][y3]
       ) {
         setStatus(`${board[x1][y1]} wins`);
-        setWinningCells(line); // Store the winning cell coordinates
+        setWinningCells(line);
         return;
       }
     }
@@ -74,7 +74,7 @@ function App() {
   const makeAIMove = () => {
     setLoading(true);
     setTimeout(() => {
-      fetch(`http://localhost:3001/api/game?board=${encodeURIComponent(JSON.stringify(board))}`)
+      fetch(`https://tic-tac-toe-2-tbys.vercel.app/api/game?board=${encodeURIComponent(JSON.stringify(board))}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data.aiResponse);
