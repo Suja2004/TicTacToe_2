@@ -94,3 +94,14 @@
   color: #fff;
   box-shadow: 0 0 10px 10px #e43434;
 }
+
+
+@media screen and (max-width:600px) {
+  .board {
+    margin: 0;
+    scale: 0.6;
+  }
+  .retry-btn{
+    margin: 0;
+  }
+}
