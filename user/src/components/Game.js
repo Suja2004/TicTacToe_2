@@ -95,7 +95,7 @@ function Game() {
     const makeAIMove = () => {
         setLoading(true);
         setTimeout(() => {
-            fetch(`http://localhost:3001/api/game?board=${encodeURIComponent(JSON.stringify(board))}&aiSymbol=${aiSymbol}`)
+            fetch(`https://tic-tac-toe-2-tbys.vercel.app/api/game?board=${encodeURIComponent(JSON.stringify(board))}&aiSymbol=${aiSymbol}`)
                 .then((res) => res.json())
                 .then((data) => {
                     setBoard(data.aiResponse.board);
