@@ -1,10 +1,30 @@
-.main {
+.main,
+.home-page {
   text-align: center;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #fff;
+}
+
+.home-page{
+  padding: 2rem;
+  box-shadow: 0 -0px 10px 5px #45cadb;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.options>button {
+  width: 200px;
+  margin: 1rem;
+  padding: .5rem 1rem;
+
 }
 
 .board-container {
@@ -56,7 +76,31 @@
   margin-top: 10px;
 }
 
-.retry-btn {
+.head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  cursor: default;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 1%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+}
+
+.retry-btn,
+.options>button,
+.start-game-btn,
+.return-btn {
   margin-top: 1rem;
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -77,7 +121,10 @@
   transition: all 0.5s ease-in-out;
 }
 
-.retry-btn:hover {
+.retry-btn:hover,
+.options>button:hover,
+.start-game-btn:hover,
+.return-btn:hover {
   border-image: linear-gradient(45deg,
       #000066 0%,
       #8a0067 20%,
@@ -95,13 +142,48 @@
   box-shadow: 0 0 10px 10px #e43434;
 }
 
+.symbol-selection {
+  padding:3.5rem 4rem;
+  position: absolute;
+  top: 0;
+  transform: translate(0%, 50%);
+  background: #000000d8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: .8rem;
+}
+
+.symbol-selection button {
+  padding: .5rem 1rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+
+.symbol-selection>.symbol-buttons button.active {
+  scale: 1.2;
+  color: #45cadb;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.game-btns {
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
 @media screen and (max-width:600px) {
   .board {
     margin: 0;
     scale: 0.8;
   }
-  .retry-btn{
+
+  .retry-btn {
     margin: 0;
   }
 }
