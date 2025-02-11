@@ -99,7 +99,7 @@
 @media screen and (max-width:600px) {
   .board {
     margin: 0;
-    scale: 0.6;
+    scale: 0.8;
   }
   .retry-btn{
     margin: 0;
