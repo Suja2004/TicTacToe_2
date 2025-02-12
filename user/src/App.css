@@ -8,9 +8,9 @@
   color: #fff;
 }
 
-.home-page{
+.home-page {
   padding: 2rem;
-  box-shadow: 0 -0px 10px 5px #45cadb;
+  box-shadow: 0 -0px 10px 5px #fff;
 }
 
 .options {
@@ -20,11 +20,10 @@
   padding: 1rem;
 }
 
-.options>button {
+.options > button {
   width: 200px;
   margin: 1rem;
-  padding: .5rem 1rem;
-
+  padding: 0.5rem 1rem;
 }
 
 .board-container {
@@ -38,13 +37,8 @@
   grid-gap: 1rem;
   margin: 20px auto;
   padding: 1rem;
-  box-shadow: 0 -0px 10px 5px #45cadb;
+  box-shadow: 0 -0px 10px 5px #1d7be7;
   border: 14px solid transparent;
-  border-image: repeating-conic-gradient(from 0deg at 50% 50%,
-      #ffea00 0 10deg,
-      #45cadb 10deg 20deg,
-      #ffea00 20deg 40deg,
-      #45cadb 40deg 50deg) 4;
 }
 
 .row {
@@ -72,33 +66,12 @@
 
 .loading {
   font-size: 1.2rem;
-  color: rgb(0, 255, 234);
+  color: #00ffea;
   margin-top: 10px;
 }
 
-.head {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  cursor: default;
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  button {
-    width: 1%;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fff;
-  }
-}
-
 .retry-btn,
-.options>button,
+.options > button,
 .start-game-btn,
 .return-btn {
   margin-top: 1rem;
@@ -108,33 +81,37 @@
   color: #222;
   cursor: pointer;
   border: 4px solid transparent;
-  border-image: linear-gradient(0deg,
-      #000066 0%,
-      #8a0067 20%,
-      #db0054 40%,
-      #ff970f 60%,
-      #ffbf00 80%,
-      #ffea00 100%);
+  border-image: linear-gradient(
+    0deg,
+    #000066 0%,
+    #8a0067 20%,
+    #db0054 40%,
+    #ff970f 60%,
+    #ffbf00 80%,
+    #ffea00 100%
+  );
   border-image-slice: 1;
   font-weight: 700;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px 2px #ffffff80;
   transition: all 0.5s ease-in-out;
 }
 
 .retry-btn:hover,
-.options>button:hover,
+.options > button:hover,
 .start-game-btn:hover,
 .return-btn:hover {
-  border-image: linear-gradient(45deg,
-      #000066 0%,
-      #8a0067 20%,
-      #db0054 40%,
-      #ff970f 60%,
-      #ffbf00 80%,
-      #ffea00 100%);
+  border-image: linear-gradient(
+    45deg,
+    #000066 0%,
+    #8a0067 20%,
+    #db0054 40%,
+    #ff970f 60%,
+    #ffbf00 80%,
+    #ffea00 100%
+  );
   border-image-slice: 1;
   transform: scale(1.05);
-  box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px 3px #ffffffcc;
 }
 
 .winning-cell {
@@ -143,31 +120,33 @@
 }
 
 .symbol-selection {
-  padding:3.5rem 4rem;
+  width: 300px;
+  height: auto;
+  padding: 3rem 0;
   position: absolute;
-  top: 0;
-  transform: translate(0%, 50%);
-  background: #000000d8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000000ee;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 }
 
 .symbol-selection button {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   margin: 1rem;
   font-size: 1.2rem;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   cursor: pointer;
 }
 
-.symbol-selection>.symbol-buttons button.active {
-  scale: 1.2;
+.symbol-selection > .symbol-buttons button.active,
+.difficulty-buttons button.active {
   color: #45cadb;
   font-weight: 700;
-  font-size: 1.3rem;
 }
 
 .game-btns {
@@ -176,14 +155,13 @@
   justify-content: space-evenly;
 }
 
+.return-home-btn:hover {
+  box-shadow: 0 0 10px 2px #ee2f2f80;
+}
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .board {
     margin: 0;
     scale: 0.8;
-  }
-
-  .retry-btn {
-    margin: 0;
   }
 }
