@@ -11,6 +11,7 @@
 .home-page {
   padding: 2rem;
   box-shadow: 0 -0px 10px 5px #fff;
+  border-radius: 1rem;
 }
 
 .options {
@@ -37,7 +38,7 @@
   grid-gap: 1rem;
   margin: 20px auto;
   padding: 1rem;
-  box-shadow: 0 -0px 10px 5px #1d7be7;
+  box-shadow: 0 0 10px 5px #fff;
   border: 14px solid transparent;
 }
 
@@ -46,11 +47,12 @@
 }
 
 .cell {
+  text-shadow: 0 0 10px #18d7f8;
   width: 100px;
   height: 100px;
+  background-color: #333;
   font-size: 2rem;
   cursor: pointer;
-  background-color: #333;
   border: 1px solid #ccc;
   display: flex;
   justify-content: center;
@@ -73,6 +75,7 @@
 .retry-btn,
 .options > button,
 .start-game-btn,
+.return-home-btn,
 .return-btn {
   margin-top: 1rem;
   padding: 1rem 2rem;
@@ -82,41 +85,46 @@
   cursor: pointer;
   border: 4px solid transparent;
   border-image: linear-gradient(
-    0deg,
+    45deg,
     #000066 0%,
     #8a0067 20%,
-    #db0054 40%,
-    #ff970f 60%,
+    #fff 40%,
+    #fff 60%,
     #ffbf00 80%,
     #ffea00 100%
   );
-  border-image-slice: 1;
+  border-image-slice: 25;
   font-weight: 700;
   box-shadow: 0 0 10px 2px #ffffff80;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s linear;
 }
 
 .retry-btn:hover,
 .options > button:hover,
 .start-game-btn:hover,
-.return-btn:hover {
+.return-btn:hover,
+.return-home-btn:hover {
+  background: none;
+  color: #fff;
   border-image: linear-gradient(
-    45deg,
+    -45deg,
     #000066 0%,
     #8a0067 20%,
-    #db0054 40%,
-    #ff970f 60%,
+    #fff 40%,
+    #fff 60%,
     #ffbf00 80%,
     #ffea00 100%
   );
-  border-image-slice: 1;
+  border-image-slice: 25;
   transform: scale(1.05);
   box-shadow: 0 0 15px 3px #ffffffcc;
 }
 
 .winning-cell {
   color: #fff;
-  box-shadow: 0 0 10px 10px #e43434;
+  box-shadow: 0 0 5px 6px #c3f;
+  border-radius: 2rem 0.5rem;
+  animation: BorderRotate 4s ease-in infinite;
 }
 
 .symbol-selection {
@@ -127,7 +135,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #000000ee;
+  background-image: linear-gradient(to top, #3cf, #c3f);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,25 +151,57 @@
   cursor: pointer;
 }
 
+.difficulty-buttons,
+h3 {
+  border-bottom: 0.2rem solid #fff;
+}
+
+.symbol-buttons button,
+.difficulty-buttons button {
+  background: none;
+  color: #fff;
+  border: none;
+}
+
 .symbol-selection > .symbol-buttons button.active,
 .difficulty-buttons button.active {
-  color: #45cadb;
-  font-weight: 700;
+  color: #8a0067;
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+
+.symbol-buttons button:hover,
+.difficulty-buttons button:hover {
+  text-decoration: underline;
 }
 
 .game-btns {
   width: 400px;
   display: flex;
   justify-content: space-evenly;
-}
-
-.return-home-btn:hover {
-  box-shadow: 0 0 10px 2px #ee2f2f80;
+  & button {
+    border: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .board {
     margin: 0;
     scale: 0.8;
+  }
+}
+
+@keyframes BorderRotate {
+  0% {
+    border-radius: 2rem 0.5rem;
+    box-shadow: 0 0 5px 6px #c3f;
+  }
+  40% {
+    border-radius: 0.5rem 2rem;
+    box-shadow: 0 0 5px 6px #3cf;
+  }
+  80% {
+    border-radius: 2rem 0.5rem;
+    box-shadow: 0 0 5px 6px #c3f;
   }
 }

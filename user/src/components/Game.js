@@ -141,10 +141,10 @@ function Game() {
     // Adjust delay based on difficulty
     const delay =
       difficulty === "hard" ? 2000 : difficulty === "medium" ? 1000 : 500;
-
+    // https://tic-tac-toe-2-tbys.vercel.app/
     setTimeout(() => {
       fetch(
-        `https://tic-tac-toe-2-tbys.vercel.app/api/game?board=${encodeURIComponent(
+        `http://localhost:3001/api/game?board=${encodeURIComponent(
           JSON.stringify(board)
         )}&aiSymbol=${aiSymbol}&difficulty=${difficulty}`
       )
