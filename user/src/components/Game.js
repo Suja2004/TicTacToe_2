@@ -144,7 +144,7 @@ function Game() {
 
     setTimeout(() => {
       fetch(
-        `http://localhost:3001/api/game?board=${encodeURIComponent(
+        `https://tic-tac-toe-2-tbys.vercel.app/api/game?board=${encodeURIComponent(
           JSON.stringify(board)
         )}&aiSymbol=${aiSymbol}&difficulty=${difficulty}`
       )
