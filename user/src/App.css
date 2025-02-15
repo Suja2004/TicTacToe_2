@@ -27,11 +27,6 @@
   padding: 0.5rem 1rem;
 }
 
-.board-container {
-  position: relative;
-  display: inline-block;
-}
-
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -72,11 +67,10 @@
   margin-top: 10px;
 }
 
-.retry-btn,
 .options > button,
 .start-game-btn,
 .return-home-btn,
-.return-btn {
+.game-btns button {
   margin-top: 1rem;
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -99,10 +93,9 @@
   transition: all 0.5s linear;
 }
 
-.retry-btn:hover,
 .options > button:hover,
 .start-game-btn:hover,
-.return-btn:hover,
+.game-btns button:hover,
 .return-home-btn:hover {
   background: none;
   color: #fff;
@@ -123,24 +116,24 @@
 .winning-cell {
   color: #fff;
   box-shadow: 0 0 5px 6px #c3f;
-  border-radius: 2rem 0.5rem;
-  animation: BorderRotate 4s ease-in infinite;
+  border-radius: 2rem;
+  animation: Border 4s ease-in infinite;
 }
 
 .symbol-selection {
   width: 300px;
   height: auto;
-  padding: 3rem 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to top, #3cf, #c3f);
+  background-image: radial-gradient(#c3f, #3cf);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 0.8rem;
+  box-shadow: 0 0 5px 6px #fff;
 }
 
 .symbol-selection button {
@@ -179,29 +172,32 @@ h3 {
   width: 400px;
   display: flex;
   justify-content: space-evenly;
-  & button {
-    border: none;
-  }
 }
 
 @media screen and (max-width: 600px) {
+  .home-page {
+    padding: 1rem;
+  }
   .board {
-    margin: 0;
-    scale: 0.8;
+    width: 240px;
+    height: 240px;
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+  }
+  .cell {
+    width: 70px;
+    height: 70px;
   }
 }
 
-@keyframes BorderRotate {
+@keyframes Border {
   0% {
-    border-radius: 2rem 0.5rem;
     box-shadow: 0 0 5px 6px #c3f;
   }
   40% {
-    border-radius: 0.5rem 2rem;
     box-shadow: 0 0 5px 6px #3cf;
   }
   80% {
-    border-radius: 2rem 0.5rem;
-    box-shadow: 0 0 5px 6px #c3f;
+    box-shadow: 0 0 5px 6px #3fc;
   }
 }
